@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Color – Malen lernen auf echtem Papier</title>
+<meta name="description" content="Color zeigt Kindern von 3 bis 7 Schritt für Schritt, wie man aus einfachen Formen Bagger, Feuerwehrautos und Ritterburgen malt – auf echtem Papier.">
+<meta property="og:title" content="Color – Malen lernen auf echtem Papier">
+<meta property="og:description" content="Schritt-für-Schritt-Malanleitungen für Kinder von 3 bis 7, Ausmalbilder zum Drucken und eine Galerie der fertigen Bilder.">
+<meta property="og:image" content="poster.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='8' width='5' height='20' rx='1.5' fill='%23e0362c'/%3E%3Crect x='10' y='5' width='5' height='23' rx='1.5' fill='%23e6a100'/%3E%3Crect x='17' y='7' width='5' height='21' rx='1.5' fill='%233f9b4a'/%3E%3Crect x='24' y='4' width='5' height='24' rx='1.5' fill='%231e63c6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap">
+<style>
+/* Layout: a paper-coloured page; the tablet with the real app video leads, then how it works,
+   what it can do, the themes and screenshots. Colour comes from the four pencils only. */
+:root {
+  --paper: #fbf7f0;
+  --sheet: #ffffff;
+  --ink: #23262d;
+  --muted: #6b6f78;
+  --line: #ebe4d8;
+  --red: #e0362c;
+  --amber: #e6a100;
+  --green: #3f9b4a;
+  --blue: #1e63c6;
+  --frame: #23262d;
+  --display: "Baloo 2", "Nunito", ui-rounded, system-ui, sans-serif;
+  --body: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1b1a18; --sheet: #26241f; --ink: #f2ece1; --muted: #b3ab9d; --line: #3a362f;
+    --red: #ff6a5f; --amber: #ffc23d; --green: #6cc576; --blue: #6fa2f0; --frame: #0d0d0c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1b1a18; --sheet: #26241f; --ink: #f2ece1; --muted: #b3ab9d; --line: #3a362f;
+  --red: #ff6a5f; --amber: #ffc23d; --green: #6cc576; --blue: #6fa2f0; --frame: #0d0d0c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.55; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); line-height: 1.08; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+/* Hero */
+.hero { padding-block: 40px 28px; display: grid; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.pencils { display: flex; gap: 6px; align-items: flex-end; }
+.pencils i { display: block; width: 14px; height: 46px; border-radius: 4px 4px 3px 3px; position: relative; }
+.pencils i::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; clip-path: polygon(50% 0, 100% 100%, 0 100%); background: #f0c9a0; }
+.pencils i:nth-child(1) { background: var(--red); height: 40px; }
+.pencils i:nth-child(2) { background: var(--amber); height: 46px; }
+.pencils i:nth-child(3) { background: var(--green); height: 42px; }
+.pencils i:nth-child(4) { background: var(--blue); height: 48px; }
+.brand b { font-family: var(--display); font-size: 34px; font-weight: 800; }
+.hero h1 { font-size: clamp(38px, 6vw, 68px); font-weight: 800; max-width: 15ch; }
+.hero h1 span { color: var(--blue); }
+.lead { font-size: clamp(18px, 2.2vw, 22px); color: var(--muted); max-width: 52ch; font-weight: 600; }
+
+.tablet { background: var(--frame); border-radius: 34px; padding: 16px; box-shadow: 0 24px 60px rgb(40 30 10 / 22%); max-width: 100%; }
+.tablet video { display: block; width: 100%; height: auto; aspect-ratio: 1376 / 1032; border-radius: 20px; background: #fbf7f0; }
+.caption { font-size: 15px; color: var(--muted); text-align: center; font-weight: 700; margin-top: 10px; }
+
+/* Sections */
+section { padding-block: 40px; }
+.section-head { display: grid; gap: 8px; margin-bottom: 24px; }
+.section-head h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; }
+.section-head p { color: var(--muted); max-width: 60ch; }
+
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.steps li { background: var(--sheet); border-radius: 22px; padding: 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.steps li::before { counter-increment: s; content: counter(s); font-family: var(--display); font-weight: 800; font-size: 26px; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
+.steps li:nth-child(1)::before { background: var(--red); }
+.steps li:nth-child(2)::before { background: var(--amber); }
+.steps li:nth-child(3)::before { background: var(--green); }
+.steps li:nth-child(4)::before { background: var(--blue); }
+.steps h3 { font-size: 23px; font-weight: 800; }
+.steps p { color: var(--muted); font-size: 17px; }
+
+.features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; }
+.feature { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; align-items: start; padding-block: 12px; border-top: 2px solid var(--line); }
+.feature .dot { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--sheet); }
+.feature svg { width: 28px; height: 28px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.feature h3 { font-size: 22px; font-weight: 800; }
+.feature p { color: var(--muted); font-size: 17px; }
+
+.themes { display: flex; flex-wrap: wrap; gap: 10px; }
+.themes span { background: var(--sheet); border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 17px; }
+.figure { font-family: var(--display); font-weight: 800; font-size: clamp(44px, 7vw, 76px); line-height: 1; color: var(--green); }
+.figures { display: flex; flex-wrap: wrap; gap: 12px 40px; margin-bottom: 22px; }
+.figures div { display: grid; }
+.figures small { font-weight: 800; color: var(--muted); font-size: 16px; }
+
+.shots { display: grid; grid-template-columns: 1.35fr 1.35fr 1fr 1fr; gap: 14px; align-items: start; }
+.shots figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
+.shots img { width: 100%; height: auto; border-radius: 18px; border: 8px solid var(--frame); background: var(--frame); }
+.shots figcaption { font-size: 15px; font-weight: 700; color: var(--muted); text-align: center; }
+
+footer { padding-block: 36px 56px; color: var(--muted); font-size: 16px; border-top: 2px solid var(--line); margin-top: 20px; }
+footer b { color: var(--ink); }
+
+@media (max-width: 860px) {
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  .steps, .features { grid-template-columns: 1fr; }
+  .tablet { padding: 9px; border-radius: 22px; }
+  .tablet video { border-radius: 14px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pencils i { animation: bob 3.2s ease-in-out infinite; }
+  .pencils i:nth-child(2) { animation-delay: .3s; } .pencils i:nth-child(3) { animation-delay: .6s; } .pencils i:nth-child(4) { animation-delay: .9s; }
+  @keyframes bob { 50% { transform: translateY(-4px); } }
+}
+</style>
+</head>
+<body>
+<header class="wrap hero">
+  <div class="brand">
+    <span class="pencils" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <b>Color</b>
+  </div>
+  <h1>Malen lernen auf echtem Papier, <span>Schritt für Schritt.</span></h1>
+  <p class="lead">Color ist unsere Mal-App für Kinder von 3 bis 7. Sie zeigt, wie man aus Kreisen, Rechtecken und Dreiecken einen Bagger, ein Feuerwehrauto oder eine ganze Ritterburg malt und hilft danach beim Ausmalen. Gemalt wird mit Stift und Papier, nicht auf dem Bildschirm.</p>
+  <div>
+    <div class="tablet">
+      <video src="color-tablet.mp4" poster="poster.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+    </div>
+    <p class="caption">So sieht es auf dem iPad aus: Thema wählen, Bild antippen, mitmalen, ausmalen.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="how">
+    <div class="section-head">
+      <h2 id="how">So funktioniert es</h2>
+      <p>Das Tablet steht neben dem Blatt. Die App zeigt den nächsten Strich, das Kind malt ihn nach.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Thema wählen</h3><p>Große Bildkacheln für Bauernhof, Baustelle, Feuerwehr, Zoo und viele mehr. Lesen muss man dafür nicht.</p></li>
+      <li><h3>Bild antippen</h3><p>Die App zeigt, welche Stifte man braucht. Ein Tipp auf „Los geht’s“ startet.</p></li>
+      <li><h3>Mitmalen</h3><p>Jeder Schritt erscheint in Schwarz, das schon Gemalte wird hellgrau. Ein kurzer Satz sagt, was zu tun ist.</p></li>
+      <li><h3>Ausmalen und zeigen</h3><p>Am Ende steht, welcher Teil welche Farbe bekommt. Ein Foto vom fertigen Blatt kommt in die Galerie.</p></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="what">
+    <div class="section-head">
+      <h2 id="what">Was Color kann</h2>
+    </div>
+    <div class="figures">
+      <div><span class="figure">~700</span><small>Mal-Anleitungen</small></div>
+      <div><span class="figure" style="color: var(--blue)">21</span><small>Themen</small></div>
+      <div><span class="figure" style="color: var(--red)">2</span><small>Stufen: Klein und Groß</small></div>
+    </div>
+    <div class="features">
+      <div class="feature"><span class="dot"><svg viewBox="0 0 24 24" stroke="var(--red)"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="4.5"/><path d="M3 21v-1a5 5 0 0110 0v1M11 21v-1.5a5.5 5.5 0 0111 0V21"/></svg></span><div><h3>Für Kleine und Große</h3><p>Jedes Kind hat ein Profil mit Foto. Die Kleinen bekommen große Formen und 3 bis 4 Schritte, die Großen mehr Details und ein Raster zum Abmalen.</p></div></div>
+      <div class="feature"><span class="dot"><svg viewBox="0 0 24 24" stroke="var(--green)"><path d="M12 3a9 9 0 100 18c1.2 0 1.8-.9 1.8-1.8 0-1.3-1-1.7-1-2.7 0-1 .8-1.5 1.8-1.5H17a4 4 0 004-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></span><div><h3>Ausmal-Hilfe</h3><p>„Rot: den Kasten und das Führerhaus. Schwarz: die Räder.“ Die Farbflächen überschneiden sich nie, so geht nichts beim Ausmalen schief.</p></div></div>
+      <div class="feature"><span class="dot"><svg viewBox="0 0 24 24" stroke="var(--blue)"><path d="M7 9V3.5h10V9"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v6.5H7z"/></svg></span><div><h3>Zum Ausdrucken</h3><p>Jedes Bild gibt es als A4-Ausmalbild mit Farbhilfe, als halb fertiges Blatt zum Weitermalen und als ganze Anleitung auf einem Blatt.</p></div></div>
+      <div class="feature"><span class="dot"><svg viewBox="0 0 24 24" stroke="var(--amber)"><path d="M12 3l2 5.5 5.5 2-5.5 2L12 18l-2-5.5-5.5-2 5.5-2z"/><path d="M19 3v4M17 5h4"/></svg></span><div><h3>Eigene Themen und Neues</h3><p>Für jedes Kind lassen sich die Lieblingsthemen einstellen, damit die Auswahl überschaubar bleibt. Neue Bilder bekommen ein Schildchen, bis das Kind sie angeschaut hat.</p></div></div>
+      <div class="feature"><span class="dot"><svg viewBox="0 0 24 24" stroke="var(--amber)"><path d="M4 8h3l1.8-2.5h6.4L17 8h3a1 1 0 011 1v9a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z"/><circle cx="12" cy="13" r="3.5"/></svg></span><div><h3>Galerie</h3><p>Fotos der fertigen Papierbilder, sortiert nach Kind. Bilder, die schon gemalt wurden, bekommen einen Stern.</p></div></div>
+      <div class="feature"><span class="dot"><svg viewBox="0 0 24 24" stroke="var(--green)"><path d="M3 12a9 9 0 0118 0"/><path d="M6.5 12a5.5 5.5 0 0111 0"/><circle cx="12" cy="12" r="1.5"/><path d="M4 4l16 16"/></svg></span><div><h3>Auch ohne Internet</h3><p>Einmal geöffnet, läuft die App auch im Flugzeug oder im Urlaub, mit allen Bildern und der Galerie.</p></div></div>
+      <div class="feature"><span class="dot"><svg viewBox="0 0 24 24" stroke="var(--blue)"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><path d="M10 18.5h4"/></svg></span><div><h3>iPad und iPhone</h3><p>Gemacht für Tablet und Telefon, hoch und quer, mit großen Knöpfen für kleine Hände.</p></div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="themes">
+    <div class="section-head">
+      <h2 id="themes">Die Themen</h2>
+      <p>Einzelne Motive für die Kleinen, knifflige Fahrzeuge und Tiere für die Großen und ganze Szenen wie die Feuerwache oder den Campingplatz.</p>
+    </div>
+    <div class="themes">
+      <span>Bauernhof</span><span>Baustelle</span><span>Polizei</span><span>Feuerwehr</span><span>Camping</span><span>Ritter</span><span>Dinos</span><span>Zoo</span><span>Müllabfuhr</span><span>Hafen</span><span>Flughafen</span><span>Eisenbahn</span><span>Weltraum</span><span>Piraten</span><span>Unterwasser</span><span>Straße</span><span>Rettung</span><span>Prärie</span><span>Alltag &amp; Freunde</span><span>Detektive</span><span>Pizzeria</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="shots">
+    <div class="section-head">
+      <h2 id="shots">Aus der App</h2>
+    </div>
+    <div class="shots">
+      <figure><img src="ipad-step.jpg" alt="iPad: Schritt 5 beim Bagger, der neue Teil in Schwarz" loading="lazy"><figcaption>Schritt für Schritt auf dem iPad</figcaption></figure>
+      <figure><img src="ipad-done.jpg" alt="iPad: fertige Feuerwache mit Farbliste" loading="lazy"><figcaption>Fertig: jetzt ausmalen</figcaption></figure>
+      <figure><img src="iphone-themes.jpg" alt="iPhone: Themen-Übersicht mit Bildkacheln" loading="lazy"><figcaption>Themen auf dem iPhone</figcaption></figure>
+      <figure><img src="iphone-print.jpg" alt="iPhone: Ausmalbild Kran zum Drucken mit Farbhilfe" loading="lazy"><figcaption>Ausmalbild zum Drucken</figcaption></figure>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p><b>Color</b> ist eine selbstgebaute Familien-App. Alle Zeichnungen sind eigens für die App entstanden.</p>
+</footer>
+
+</body>
+</html>
